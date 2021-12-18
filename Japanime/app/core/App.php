@@ -1,5 +1,7 @@
 <?php
 namespace App\core;
+require_once("../Japanime/vendor/autoload.php");
+use Dotenv\Dotenv;
 
 class App{
 	//default parameter
@@ -49,6 +51,10 @@ class App{
 		//$url = array(2=>'param1', 3=>'param2')
 		$this->params = $url ? array_values($url) : [];
 		//$this->params contains ['param1', 'param2']
+
+		// Load from the .env file
+		$this->dotenv = Dotenv::createImmutable(getcwd());
+        $this->dotenv->load();
 
 		call_user_func_array([$this->controller, $this->method], $this->params);
 	}

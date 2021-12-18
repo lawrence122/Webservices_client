@@ -26,6 +26,7 @@
     <div class="products">
         <ul id="products-list">
             <?php
+            if(!is_null($data)) {
                 for($i = 0; $i < sizeof($data); $i++) {
                     echo "<li>
                             <div class='product'>
@@ -54,6 +55,7 @@
                                 </a>";
                     }
                 }
+            }
             ?>
         </ul>
     </div>

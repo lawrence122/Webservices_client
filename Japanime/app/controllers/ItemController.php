@@ -5,7 +5,7 @@ class ItemController extends \App\core\Controller {
 
 	function index() {
 		$item = new \App\models\Item();
-		$items = $item->getItemsFromClient("10938.Zjg5YmMyZmU3YzZmYzUyNGJjYTJmMmVhOGRjNjE2NjY");
+		$items = $item->getItemsFromClient($_ENV['TOKEN']);
 		$this->view('Product/itemList', $items);
 	}
 
@@ -29,7 +29,7 @@ class ItemController extends \App\core\Controller {
 						$item->description = $_POST['description'];
 						$item->price = $_POST['price'];
 						$item->stock = $_POST['quantity'];
-						$item->insert("10938.Zjg5YmMyZmU3YzZmYzUyNGJjYTJmMmVhOGRjNjE2NjY");
+						$item->insert($_ENV['TOKEN']);
 
 						header('location:'.BASE.'/Item/index');
 					} else {
@@ -44,7 +44,7 @@ class ItemController extends \App\core\Controller {
 
 	function getItems() {
         $item = new \App\models\Item();
-		$items = $item->getItemsFromClient("10938.Zjg5YmMyZmU3YzZmYzUyNGJjYTJmMmVhOGRjNjE2NjY");
+		$items = $item->getItemsFromClient($_ENV['TOKEN']);
 		$this->view('Product/itemList', $items);
 	}
 
@@ -58,11 +58,11 @@ class ItemController extends \App\core\Controller {
 			$item->price = $_POST['price'];
 			$item->stock = $_POST['quantity'];
 
-			$item->updateItem("10938.Zjg5YmMyZmU3YzZmYzUyNGJjYTJmMmVhOGRjNjE2NjY");
+			$item->updateItem($_ENV['TOKEN']);
 
 			header("location:".BASE."/Item/index");
 		} else {
-			$item = $item->getItem("10938.Zjg5YmMyZmU3YzZmYzUyNGJjYTJmMmVhOGRjNjE2NjY");
+			$item = $item->getItem($_ENV['TOKEN']);
 			$this->view('Product/editItem', $item);
 		}
 	}
@@ -71,7 +71,7 @@ class ItemController extends \App\core\Controller {
 		$item = new \App\models\Item();
 		$item->item_id = $item_id;
 
-		$item->deleteItem("10938.Zjg5YmMyZmU3YzZmYzUyNGJjYTJmMmVhOGRjNjE2NjY");
+		$item->deleteItem($_ENV['TOKEN']);
 		header("location:".BASE."/Item/index");
 	}
 }

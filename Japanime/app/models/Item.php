@@ -36,7 +36,10 @@ class Item {
 		$response = curl_exec($ch);
 		curl_close($ch);
 		$response = json_decode($response, true);
-		return $response['items'];
+		if (!is_null($response) && $response['status'] != 401) {
+			return $response['items'];
+		}
+		return null;
 	}
 
 	public function getItem($token) {
