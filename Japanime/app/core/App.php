@@ -3,7 +3,7 @@ namespace App\core;
 
 class App{
 	//default parameter
-	protected $controller = 'App\\controllers\\DefaultController';
+	protected $controller = 'App\\controllers\\ItemController';
 	protected $method = 'index';
 	protected $params = [];
 
