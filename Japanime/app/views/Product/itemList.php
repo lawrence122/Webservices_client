@@ -6,6 +6,8 @@
     /core.css">
     <link rel="stylesheet" type="text/css" href="../css
     /userProduct.css">
+    <link rel="stylesheet" type="text/css" href="../css
+    /adminProduct.css">
 </head>
 <body>
     
@@ -24,21 +26,32 @@
     <div class="products">
         <ul id="products-list">
             <?php
-                foreach ($data as $item) {
+                for($i = 0; $i < sizeof($data); $i++) {
                     echo "<li>
                             <div class='product'>
-                                <img src='" . BASE . "/uploads/$item->picture' style='width: 100%;'>
-                                <h1 class='title'>$item->item_name</h1>
-                                <p class='price'>$item->price$</p>
-                                <p>$item->description</p>";
-                    if ($item->stock == 0) {
+                                <h1 class='title'>".$data[$i]['item_name']."</h1>
+                                <p class='price'>".$data[$i]['price']."$</p>
+                                <p>".$data[$i]['description']."</p>";
+                    if ($data[$i]['stock'] == 0) {
                         echo "<button type='button' class='m_btn' disabled>Add to Cart</button>
-                                <p class='line'>Quantity: $item->stock</p>
-                            </div>";
+                                <p class='line'>Quantity: ".$data[$i]['stock']."</p>
+                            </div>
+                            <a href='" . BASE . "/Item/update/".$data[$i]['item_id']."'>
+                                    <button class='adminBtn' type='button' id='edit'>Edit</button>
+                                </a>
+                                <a href='" . BASE . "/Item/delete/".$data[$i]['item_id']."'>
+                                    <button class='adminBtn' type='button' id='delete'>Delete</button>
+                                </a>";
                     } else {
-                        echo "<a href='" . BASE . "/OrderDetails/add/$item->item_id'><button type='button' class='m_btn'>Add to Cart</button></a>
-                                <p class='line'>Quantity: $item->stock</p>
-                            </div>";
+                        echo "<a href='" . BASE . "/OrderDetails/add/".$data[$i]['item_id']."'><button type='button' class='m_btn'>Add to Cart</button></a>
+                                <p class='line'>Quantity: ".$data[$i]['stock']."</p>
+                            </div>
+                            <a href='" . BASE . "/Item/update/".$data[$i]['item_id']."'>
+                                    <button class='adminBtn' type='button' id='edit'>Edit</button>
+                                </a>
+                                <a href='" . BASE . "/Item/delete/".$data[$i]['item_id']."'>
+                                    <button class='adminBtn' type='button' id='delete'>Delete</button>
+                                </a>";
                     }
                 }
             ?>
@@ -51,6 +64,7 @@
 </body>
 </html>
 
+<!-- <img src='" . BASE . "/uploads/$item->picture' style='width: 100%;'> -->
 
 
 
