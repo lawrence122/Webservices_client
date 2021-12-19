@@ -53,8 +53,9 @@
                         </a>";
                     ?> -->
                 </ul>
+                <br><br>
+                <input id="add" type="submit" name="action" value="Add to Cart"><br><br>
             </div>
-            <input id="add" type="submit" name="action" value="Add to Cart"><br><br>
                 
 
                 <!-- <div class="products">

@@ -8,8 +8,7 @@ select {
 
 .products {
   margin: auto;
-  width: 75%;
-  padding: 10px;
+  width: 60%;
 }
 
 .product {
@@ -24,6 +23,10 @@ select {
 	font-weight: bold;
 	padding: 15px;
 	margin: -10px;
+}
+
+#products-list {
+  list-style-type: none;
 }
 
 .product:hover {

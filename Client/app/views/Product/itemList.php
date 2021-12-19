@@ -50,5 +50,3 @@
     </footer>
 </body>
 </html>
-
-<!-- <img src='" . BASE . "/uploads/$item->picture' style='width: 100%;'> -->

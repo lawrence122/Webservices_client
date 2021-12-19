@@ -32,7 +32,6 @@ label {
 }
 
 #add {
-	margin-top: 30px;
 	border: none;
 	outline: 0;
 	padding: 12px;
@@ -41,11 +40,11 @@ label {
 	text-align: center;
 	cursor: pointer;
 	width: 40%;
-	margin-left: auto;
-	margin-right: auto;
 	font-size: 18px;
 	box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
-	transition: 0.2s all; 
+	transition: 0.2s all;
+	display: block;
+    margin : 0 auto;
 }
 
 #edit {
