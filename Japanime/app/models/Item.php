@@ -19,12 +19,13 @@ class Item {
 		$response = curl_exec($ch);
 		curl_close($ch);
 		$response = json_decode($response, true);
+		echo $response;
 
-		if ($response['status'] == "201") {
-			return true;
-		} else {
-			return false;
-		}
+		// if (!is_null($response) && $response['status'] == "201") {
+		// 	return true;
+		// } else {
+		// 	return false;
+		// }
 	}
 
 	public function getItemsFromClient($token) {

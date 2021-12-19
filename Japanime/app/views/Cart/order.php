@@ -3,7 +3,8 @@
 <head>
     <title>Put in an Order</title>
     <link rel="stylesheet" type="text/css" href="../css/core.css">
-    <link rel="stylesheet" type="text/css" href="../css/adminProduct.css">
+    <link rel="stylesheet" type="text/css" href="../css/addProduct.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/adminProduct.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
@@ -27,18 +28,32 @@
                 <label>Client's Name: 
                     <input type="text" name="client_id">
                 </label><br><br>
-                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                    <option selected>Choose an item</option>
-                    <?php
-                    if(!is_null($data)) {
-                        for($i = 0; $i < sizeof($data); $i++) {
-                            if ($data[$i]['stock'] != 0) {
-                                echo "<option value=' . $data[$i]['item_id'] . '>" . $data[$i]['item_name'] . "</option>";
+                <div class="products">
+                    <ul id="products-list">
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option selected>Choose an item</option>
+                        <?php
+                        if(!is_null($data)) {
+                            for($i = 0; $i < sizeof($data); $i++) {
+                                if ($data[$i]['stock'] != 0) {
+                                    echo "<option value=' . $data[$i]['item_id'] . '>" . $data[$i]['item_name'] . "</option>
+                                          <input name='" . $data[$i]['item_id'] . "_amount' data-prefix='x value='0' data-decimals='0' min='0' 
+                                                    max='" . $data[$i]['stock'] . "' step='1' type='number' />";
+                                }
                             }
                         }
-                    }
-                ?>
-                </select>
+                    ?>
+                    </select>
+                    <?php
+                    echo "<a href='" . BASE . "/Item/update/".$data[$i]['item_id']."'>
+                            <button class='adminBtn' type='button' id='edit'>Edit</button>
+                        </a>
+                        <a href='" . BASE . "/Item/delete/".$data[$i]['item_id']."'>
+                            <button class='adminBtn' type='button' id='delete'>Delete</button>
+                        </a>";
+                    ?>
+                </ul>
+            </div>
                 
 
                 <!-- <div class="products">
