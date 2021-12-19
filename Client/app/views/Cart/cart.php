@@ -4,6 +4,7 @@
     <title>View Orders</title>
     <link rel="stylesheet" type="text/css" href="../css/core.css">
     <link rel="stylesheet" type="text/css" href="../css/cart.css">
+    <link rel="stylesheet" type="text/css" href="../css/adminProduct.css">
 </head>
 <body>
     
@@ -47,7 +48,7 @@
                                     <button class='adminBtn' type='button' id='edit'>Completed</button>
                                 </a>
                                 <a href='" . BASE . "/Cart/edit/".$data[$i]['cart_id']."'>
-                                    <button class='adminBtn' type='button' id='edit'>Edit</button>
+                                    <button class='adminBtn' type='button' id='edit'>Add to Order</button>
                                 </a>
                             </div>
                         <div class='total-price'>".$data[$i]['items'][0]['amount']."$</div>
@@ -56,6 +57,7 @@
             }
         ?>
     </div>
+
     <footer>
         &copy 2021 Cakes Co., Ltd. - Your number one cake supplier from Canada.
     </footer>

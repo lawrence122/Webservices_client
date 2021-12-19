@@ -18,11 +18,12 @@
             </ul>
         </nav>
     </div>
+
     <div id="wrapper">
         <form action="" method="post" enctype="multipart/form-data">
             <div id="form">
                 <h1>Place Your Order</h1>
-                <label>Client's Name: 
+                <label>Client Name: 
                     <input type="text" name="client_id">
                 </label><br><br>
                 <div class="products">
@@ -42,57 +43,15 @@
                             </select>
                             <input name='amount' data-prefix='x' value='0' data-decimals='0' min='0' max='10' step='1' type='number' />
                         </label>
-                    <!-- <?php
-                    echo "<a href='" . BASE . "/Item/update/".$data[$i]['item_id']."'>
-                            <button class='adminBtn' type='button' id='edit'>Edit</button>
-                        </a>
-                        <a href='" . BASE . "/Item/delete/".$data[$i]['item_id']."'>
-                            <button class='adminBtn' type='button' id='delete'>Delete</button>
-                        </a>";
-                    ?> -->
-                </ul>
-                <br><br>
-                <input id="add" type="submit" name="action" value="Add to Cart"><br><br>
-            </div>
-                
-
-                <!-- <div class="products">
-                    <ul id="products-list">
-                        <?php
-                        if(!is_null($data)) {
-                            for($i = 0; $i < sizeof($data); $i++) {
-                                if ($data[$i]['stock'] != 0) {
-                                    echo "<li>
-                                            <div class='product'>
-                                                <h1 class='title'>".$data[$i]['item_name']."</h1>
-                                                <p class='price'>".$data[$i]['price']."$</p>
-                                                <p>".$data[$i]['description']."</p>
-                                                <a href='" . BASE . "/Cart/insert/".$data[$i]['item_id']."'>
-                                                        <input id='add' type='submit' name='action' value='Add'>
-                                                </a>
-                                                <input name='" . $data[$i]['item_id'] . "_amount' data-prefix='x value='0' data-decimals='0' min='0' 
-                                                    max='" . $data[$i]['stock'] . "' step='1' type='number' />
-                                            </div>
-                                            <a href='" . BASE . "/Item/update/".$data[$i]['item_id']."'>
-                                                <button class='adminBtn' type='button' id='edit'>Edit</button>
-                                            </a>
-                                            <a href='" . BASE . "/Item/delete/".$data[$i]['item_id']."'>
-                                                <button class='adminBtn' type='button' id='delete'>Delete</button>
-                                            </a>";
-                                }
-                            }
-                        }
-                        ?>
                     </ul>
-                </div> -->
+                    <br><br>
+                    <input id="add" type="submit" name="action" value="Add to Cart"><br><br>
+                </div>
+                
             </div>
         </form>
     </div>
-    <!-- <a href='" . BASE . "/Cart/insert/".$data[$i]['item_id']."'>
-                                                    <button class='adminBtn' type='button' id='edit'>
-                                                        <input id='add' type='submit' name='action' value='Add'>
-                                                    </button>
-                                                </a> -->
+
     <footer>
         &copy 2021 Cakes Co., Ltd. - Your number one cake supplier from Canada.
     </footer>

@@ -17,18 +17,12 @@
         </nav>
     </div>
     <div id="wrapper">
-        <!-- <?php
-        var_dump($data);
-        ?> -->
         <form action="" method="post" enctype="multipart/form-data">
             <div id="form">
-                <h1>Add to Your Order</h1>
-                <label>Client Name: <?= $data['cart']['client_id']?>
-                    <!-- <input type="text" name="client_id" value="<?= $data['cart']['client_id']?>"> -->
-                </label><br><br>
+                <h1><?= $data['cart']['client_id']?>'s Order</h1>
                 <div class="products">
                     <ul id="products-list">
-                        <label>Choose an item
+                        <label>Choose an item: </label>
                             <select name="item_ordered" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                                 <option selected>Choose an item</option>
                                 <?php
@@ -42,10 +36,12 @@
                             ?>
                             </select>
                             <input name='amount' data-prefix='x' value='0' data-decimals='0' min='0' max='10' step='1' type='number' />
-                        </label>
-                </ul>
+                    </ul>
+                </div>
             </div>
+            <br><br>
             <input id="add" type="submit" name="action" value="Add to Cart"><br><br>
+        </form>
     </div>
 
     <footer>
