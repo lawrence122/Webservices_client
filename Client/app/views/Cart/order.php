@@ -34,7 +34,7 @@
                                 if (!is_null($data)) {
                                     for ($i = 0; $i < sizeof($data); $i++) {
                                         if ($data[$i]['stock'] != 0) {
-                                            echo "<option value='" . $data[$i]['item_id'] . "'>'" . $data[$i]['item_name'] . "'</option>";
+                                            echo "<option value='" . $data[$i]['item_id'] . "'>'" . $data[$i]['item_name'] . "</option>";
                                         }
                                     }
                                 }
