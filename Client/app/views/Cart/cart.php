@@ -40,13 +40,16 @@
                                 <span id='client'>".$data[$i]['client_id']."</span>
                             </div>
                             <div class='description'>";
+                            $cost = 0;
 
                             if (sizeof($data[$i]['items']) > 1) {
                                 for ($j = 0; $j < sizeof($data[$i]['items']); $j++) {
                                     echo "<span>".$data[$i]['items'][$j]['item_name']." x".$data[$i]['items'][$j]['amount']."</span>";
+                                    $cost += ($data[$i]['items'][$j]['amount'] * $data[$i]['items'][$j]['price']);
                                 }
                             } else {
-                                echo "<span>".$data[$i]['items'][0]['item_name']." x".$data[$i]['items'][0]['amount']."</span>";   
+                                echo "<span>".$data[$i]['items'][0]['item_name']." x".$data[$i]['items'][0]['amount']."</span>";
+                                $cost += ($data[$i]['items'][0]['amount'] * $data[$i]['items'][0]['price']);
                             }
                             
                             echo "</div>
@@ -58,6 +61,7 @@
                                     <button class='adminBtn' type='button' id='edit'>Add to Order</button>
                                 </a>
                             </div>
+                            <div class='total-price'>" . $cost . "$</div>
                         </div>";
                 }
             }
