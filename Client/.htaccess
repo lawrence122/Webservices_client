@@ -2,7 +2,7 @@ Options -MultiViews
 
 RewriteEngine On
 
-RewriteBase /Webservices_client/Japanime
+RewriteBase /Webservices_client/Client
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

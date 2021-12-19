@@ -1,6 +1,6 @@
 <?php
 namespace App\core;
-require_once("../Japanime/vendor/autoload.php");
+require_once("../Client/vendor/autoload.php");
 use Dotenv\Dotenv;
 
 class App{
