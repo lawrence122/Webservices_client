@@ -2,11 +2,8 @@
 <html>
 <head>
     <title>Modify Account</title>
-    <link rel="stylesheet" type="text/css" href="../css
-    /core.css">
-    <link rel="stylesheet" type="text/css" href="../css
-    /editUser.css">
-    <script src="../js/modifyAccount.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/core.css">
+    <link rel="stylesheet" type="text/css" href="../css/editUser.css">
 </head>
 <body>
     <div id="container">

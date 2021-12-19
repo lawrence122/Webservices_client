@@ -2,11 +2,8 @@
 <html>
 <head>
     <title>Change Password</title>
-    <link rel="stylesheet" type="text/css" href="../../css
-    /core.css">
-    <link rel="stylesheet" type="text/css" href="../../css
-    /editUser.css">
-    <script src="../../js/modifyPassword.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/core.css">
+    <link rel="stylesheet" type="text/css" href="../../css/editUser.css">
 </head>
 <body>
     <div id="container">
