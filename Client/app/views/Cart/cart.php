@@ -15,7 +15,7 @@
                 <li><a href='<?= BASE ?>/Item/getItems'>Items</a>
                 <li><a href='<?= BASE ?>/Item/insert'>Add Item</a>
                 <li><a href='<?= BASE ?>/Cart/insert'>Place order</a>
-                <li><a href='<?= BASE ?>/Cart/index'>Orders</a>
+                <li class="curr_page"><a href='<?= BASE ?>/Cart/index'>Orders</a>
             </ul>
         </nav>
     </div>

@@ -7,7 +7,9 @@ select {
 }
 
 .products {
-	padding-left: 105px;
+  margin: auto;
+  width: 75%;
+  padding: 10px;
 }
 
 .product {
