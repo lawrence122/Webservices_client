@@ -34,6 +34,7 @@ header {
 	display: flex;
 	justify-content: center;
 	color: #e43e6f;
+	font-family: muli, sans-serif;
 }
 
 #logo {

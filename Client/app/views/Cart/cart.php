@@ -38,7 +38,7 @@
                             </div>
          
                             <div class='description'>
-                                <span>".$data[$i]['client_id']."</span>
+                                <span id='client'>".$data[$i]['client_id']."</span>
                             </div>
                             <div class='description'>
                                 Item Name<span>".$data[$i]['items'][0]['item_name']."</span>

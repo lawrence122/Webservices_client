@@ -36,11 +36,10 @@ select {
 .adminBtn {
 	border: none;
 	outline: 0;
-	padding: 12px;
 	color: white;
 	text-align: center;
 	cursor: pointer;
-	width: 40%;
+	width: 50%;
 	font-size: 18px;
 	box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
 	transition: 0.2s all; 
@@ -58,10 +57,12 @@ select {
 
 #edit {
 	background-color: #EFAE17;
+	width: 100px;
 }
 
 #delete {
 	background-color: #EF2D2D;
+	width: 100px;
 }
 
 .line {

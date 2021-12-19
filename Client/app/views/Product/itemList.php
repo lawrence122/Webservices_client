@@ -31,7 +31,7 @@
                                 <h1 class='title'>".$data[$i]['item_name']."</h1>
                                 <p class='price'>".$data[$i]['price']."$</p>
                                 <p>".$data[$i]['description']."</p>
-                                <p class='line'>Quantity: ".$data[$i]['stock']."</p>
+                                <p class='line'>Quantity: ".$data[$i]['stock']."</p><br>
                                 <a href='" . BASE . "/Item/update/".$data[$i]['item_id']."'>
                                     <button class='adminBtn' type='button' id='edit'>Edit</button>
                                 </a>
