@@ -6,7 +6,7 @@ class CartController extends \App\core\Controller {
 	function index() {
 		// $item = new \App\models\Item();
 		// $items = $item->getItemsFromClient($_ENV['TOKEN']);
-		$this->view('Cart/order');
+		$this->view('Cart/cart');
 	}
 
 	function insert($item_id, $amount) {
