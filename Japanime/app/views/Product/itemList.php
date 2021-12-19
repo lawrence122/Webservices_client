@@ -2,12 +2,9 @@
 <html>
 <head>
     <title>Home Page</title>
-    <link rel="stylesheet" type="text/css" href="../css
-    /core.css">
-    <link rel="stylesheet" type="text/css" href="../css
-    /userProduct.css">
-    <link rel="stylesheet" type="text/css" href="../css
-    /adminProduct.css">
+    <link rel="stylesheet" type="text/css" href="../css/core.css">
+    <link rel="stylesheet" type="text/css" href="../css/userProduct.css">
+    <link rel="stylesheet" type="text/css" href="../css/adminProduct.css">
 </head>
 <body>
     
@@ -55,6 +52,3 @@
 </html>
 
 <!-- <img src='" . BASE . "/uploads/$item->picture' style='width: 100%;'> -->
-
-
-
