@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Item</title>
-    <link rel="stylesheet" type="text/css" href="../css
-    /core.css">
-    <link rel="stylesheet" type="text/css" href="../css
-    /addProduct.css">
-    <script src="../js/core.js"></script>
+    <title>Edit Item</title>
+    <link rel="stylesheet" type="text/css" href="../../css/core.css">
+    <link rel="stylesheet" type="text/css" href="../../css/addProduct.css">
 </head>
 <body>
     
@@ -27,7 +24,7 @@
         <form action="" method="post" enctype="multipart/form-data">
             <div id="form">
                 
-                <h1>Add Item</h1><br>
+                <h1>Update Item</h1><br>
                 <label>Item Name: 
                     <input type="text" name="product_name" value="<?= $data['item_name']?>">
                 </label><br><br>

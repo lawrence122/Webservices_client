@@ -12,6 +12,7 @@ class ItemController extends \App\core\Controller {
 	function insert() {
 		if (isset($_POST['action'])) {
 			if (isset($_FILES['myImage'])) {
+
 				$check = getimagesize($_FILES['myImage']['tmp_name']);
 				$allowedTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/jpg'];
 
@@ -31,7 +32,7 @@ class ItemController extends \App\core\Controller {
 						$item->stock = $_POST['quantity'];
 						$item->insert($_ENV['TOKEN']);
 
-						header('location:'.BASE.'/Item/index');
+						// header('location:'.BASE.'/Item/index');
 					} else {
 						echo 'error';
 					}
