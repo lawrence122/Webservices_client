@@ -4,9 +4,9 @@ namespace App\controllers;
 class CartController extends \App\core\Controller {
 
 	function index() {
-		$item = new \App\models\Item();
-		$items = $item->getItemsFromClient($_ENV['TOKEN']);
-		$this->view('Cart/order', $items);
+		// $item = new \App\models\Item();
+		// $items = $item->getItemsFromClient($_ENV['TOKEN']);
+		$this->view('Cart/order');
 	}
 
 	function insert($item_id, $amount) {
