@@ -4,7 +4,6 @@
     <title>View Orders</title>
     <link rel="stylesheet" type="text/css" href="../css/core.css">
     <link rel="stylesheet" type="text/css" href="../css/cart.css">
-    <link rel="stylesheet" type="text/css" href="../css/adminProduct.css">
 </head>
 <body>
     
@@ -45,7 +44,7 @@
                             </div>
                             <div class='quantity'>
                                 <a href='" . BASE . "/Cart/update/".$data[$i]['cart_id']."'>
-                                    <button class='adminBtn' type='button' id='edit'>Completed</button>
+                                    <button class='adminBtn' type='button' id='complete'>Completed</button>
                                 </a>
                                 <a href='" . BASE . "/Cart/edit/".$data[$i]['cart_id']."'>
                                     <button class='adminBtn' type='button' id='edit'>Add to Order</button>

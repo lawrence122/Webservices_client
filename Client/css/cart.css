@@ -72,6 +72,36 @@
   padding: 10px;
 }
 
+#complete {
+  background-color: #39CB29;
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  transition: 0.2s all; 
+  border-radius: 25px;
+}
+
+#edit {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  transition: 0.2s all; 
+  border-radius: 25px;
+  background-color: #EFAE17;
+}
+
 .shopping-cart {
   width: 1000px;
   margin: 80px auto;
