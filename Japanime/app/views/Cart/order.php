@@ -4,7 +4,6 @@
     <title>Put in an Order</title>
     <link rel="stylesheet" type="text/css" href="../css/core.css">
     <link rel="stylesheet" type="text/css" href="../css/addProduct.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../css/adminProduct.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>

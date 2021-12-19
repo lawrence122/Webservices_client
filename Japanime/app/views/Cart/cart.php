@@ -25,71 +25,30 @@
             Client Orders
         </div>
         <?php
-            $index = 0;
-            foreach ($data['products'] as $product) {
-                echo "<div class='item'>
-                        <div class='buttons'>
-                            <span class='delete-btn'>
-                                <a href='" . BASE . "/OrderDetails/delete/$product->product_id'>
-                                    <img src='../img/delete.png'>
+        // var_dump($data);
+            for ($i = 0; $i < sizeof($data); $i++) {
+                if ($data[$i]['cart_status'] != "Completed") {
+                    echo "<div class='item'>
+                            <div class='buttons'>
+                                <span class='delete-btn'>
+                                    <a href='" . BASE . "/Cart/delete/".$data[$i]['cart_id']."'>
+                                        <img src='../img/delete.png'>
+                                    </a>
+                                </span>
+                            </div>
+         
+                            <div class='description'>
+                                <span>".$data[$i]['client_id']."</span>
+                            </div>
+                            <div class='quantity'>
+                                <a href='" . BASE . "/Cart/update/".$data[$i]['cart_status']."'>
+                                    <button class='adminBtn' type='button' id='edit'>Completed</button>
                                 </a>
-                            </span>
-                        </div>
-
-                        <div class='image'>
-                            <img src='" . BASE . "/uploads/$product->filename' style='width: 40%;'>
-                        </div>
-     
-                        <div class='description'>
-                            <span>$product->product_name</span>
-                        </div>
-                        <div class='quantity'>
-                            <a href='" . BASE . "/OrderDetails/addQty/$product->product_id'>
-                                <button class='plus-btn' type='button' name='button'>
-                                    <img src='../img/plus.png'>
-                                </button>
-                            </a>
-                            <input type='text' name='name' value='" . $data['quantities'][$index]->product_quantity . "'>
-                            <a href='" . BASE . "/OrderDetails/removeQty/$product->product_id'>
-                            <button class='minus-btn' type='button' name='button'>
-                                <img src='../img/minus.png'>
-                            </button>
-                        </a>
-                    </div>
-                    <div class='total-price'>" . $data['prices'][$index]->total_item_price . "$</div>
-                    </div>";
-                $index++;
+                            </div>
+                        <div class='total-price'>".$data[$i]['items'][0]['amount']."$</div>
+                        </div>";
+                }
             }
-        ?>
-    </div>
-
-    <div class="line"></div>
-
-    <div id="totalPrice">
-        <label id="priceLabel">Total Price: </label>
-            <label id="totalPriceLabel" name="total_price">
-                <?php
-                    $total_price = 0;
-
-                    foreach ($data['prices'] as $price) {
-                        $total_price += $price->total_item_price;
-                    }
-
-                    echo "$total_price$";
-                ?>
-            </label>
-    </div>
-
-    <div id="next-btn">
-        <a href="<?=BASE?>/Default/home"><button id="continue-shopping">Continue Shopping</button></a>
-
-        <?php
-            if ($data['order_id'] != null) {
-                echo "<a href='" . BASE . "/Order/update/" . $data['order_id'] . "'><button id='checkout'>Checkout</button></a>";
-            } else {
-                echo "<button id='checkout' disabled>Checkout</button>";
-            }
-
         ?>
     </div>
 
