@@ -58,9 +58,7 @@
                                     <button class='adminBtn' type='button' id='edit'>Add to Order</button>
                                 </a>
                             </div>
-                        <div class='total-price'>".$data[$i]['items'][0]['amount']."$</div>
                         </div>";
-
                 }
             }
         ?>
