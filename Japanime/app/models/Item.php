@@ -36,7 +36,7 @@ class Item {
 		$response = curl_exec($ch);
 		curl_close($ch);
 		$response = json_decode($response, true);
-		if (!is_null($response) && $response['status'] != 401) {
+		if (!is_null($response) && $response['status'] != 401 && $response['items'] != "None Found") {
 			return $response['items'];
 		}
 		return null;

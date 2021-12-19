@@ -18,6 +18,7 @@
             <ul id="nav_ul">
                 <li><a href='<?= BASE ?>/Item/getItems'>Items</a>
                 <li><a href='<?= BASE ?>/Item/insert'>Add Item</a>
+                <li><a href='<?= BASE ?>/Cart/index'>Put in an order</a>
                 <li><a href='<?= BASE ?>/Product/viewFigure'>Cart</a>
             </ul>
         </nav>
@@ -32,28 +33,15 @@
                             <div class='product'>
                                 <h1 class='title'>".$data[$i]['item_name']."</h1>
                                 <p class='price'>".$data[$i]['price']."$</p>
-                                <p>".$data[$i]['description']."</p>";
-                    if ($data[$i]['stock'] == 0) {
-                        echo "<button type='button' class='m_btn' disabled>Add to Cart</button>
+                                <p>".$data[$i]['description']."</p>
                                 <p class='line'>Quantity: ".$data[$i]['stock']."</p>
-                            </div>
-                            <a href='" . BASE . "/Item/update/".$data[$i]['item_id']."'>
+                                <a href='" . BASE . "/Item/update/".$data[$i]['item_id']."'>
                                     <button class='adminBtn' type='button' id='edit'>Edit</button>
                                 </a>
                                 <a href='" . BASE . "/Item/delete/".$data[$i]['item_id']."'>
                                     <button class='adminBtn' type='button' id='delete'>Delete</button>
-                                </a>";
-                    } else {
-                        echo "<a href='" . BASE . "/OrderDetails/add/".$data[$i]['item_id']."'><button type='button' class='m_btn'>Add to Cart</button></a>
-                                <p class='line'>Quantity: ".$data[$i]['stock']."</p>
-                            </div>
-                            <a href='" . BASE . "/Item/update/".$data[$i]['item_id']."'>
-                                    <button class='adminBtn' type='button' id='edit'>Edit</button>
                                 </a>
-                                <a href='" . BASE . "/Item/delete/".$data[$i]['item_id']."'>
-                                    <button class='adminBtn' type='button' id='delete'>Delete</button>
-                                </a>";
-                    }
+                            </div>";
                 }
             }
             ?>
