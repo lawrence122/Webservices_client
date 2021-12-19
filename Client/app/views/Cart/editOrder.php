@@ -23,8 +23,8 @@
         <form action="" method="post" enctype="multipart/form-data">
             <div id="form">
                 <h1>Add to Your Order</h1>
-                <label>Client's Name: 
-                    <input type="text" name="client_id" value="<?= $data['cart']['client_id']?>">
+                <label>Client Name: <?= $data['cart']['client_id']?>
+                    <!-- <input type="text" name="client_id" value="<?= $data['cart']['client_id']?>"> -->
                 </label><br><br>
                 <div class="products">
                     <ul id="products-list">
@@ -46,6 +46,8 @@
                 </ul>
             </div>
             <input id="add" type="submit" name="action" value="Add to Cart"><br><br>
+    </div>
+
     <footer>
         &copy 2021 Cakes Co., Ltd. - Your number one cake supplier from Canada.
     </footer>
