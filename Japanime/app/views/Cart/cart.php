@@ -46,6 +46,9 @@
                                 <a href='" . BASE . "/Cart/update/".$data[$i]['cart_id']."'>
                                     <button class='adminBtn' type='button' id='edit'>Completed</button>
                                 </a>
+                                <a href='" . BASE . "/Cart/edit/".$data[$i]['cart_id']."'>
+                                    <button class='adminBtn' type='button' id='edit'>Edit</button>
+                                </a>
                             </div>
                         <div class='total-price'>".$data[$i]['items'][0]['amount']."$</div>
                         </div>";
@@ -53,7 +56,6 @@
             }
         ?>
     </div>
-
     <footer>
         &copy 2021 Cakes Co., Ltd. - Your number one cake supplier from Canada.
     </footer>

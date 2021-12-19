@@ -22,7 +22,7 @@
     <div id="wrapper">
         <form action="" method="post" enctype="multipart/form-data">
             <div id="form">
-                <h1>Make Your Order (??)</h1>
+                <h1>Place Your Order</h1>
                 <label>Client's Name: 
                     <input type="text" name="client_id">
                 </label><br><br>
@@ -35,16 +35,14 @@
                                 if(!is_null($data)) {
                                     for($i = 0; $i < sizeof($data); $i++) {
                                         if ($data[$i]['stock'] != 0) {
-                                            echo "<option value='" . $data[$i]['item_id'] . "'>" . $data[$i]['item_name'] . "</option>
-                                                    <input name='amount' data-prefix='x' value='0' data-decimals='0' min='0' max='" . $data[$i]['stock'] . "' step='1' type='number' />";
+                                            echo "<option value='" . $data[$i]['item_id'] . "'>" . $data[$i]['item_name'] . "</option>";
                                         }
                                     }
                                 }
                             ?>
                             </select>
+                            <input name='amount' data-prefix='x' value='0' data-decimals='0' min='0' max='10' step='1' type='number' />
                         </label>
-                    <!-- <input name='" . $data[$i]['item_id'] . "_amount' data-prefix='x value='0' data-decimals='0' min='0' 
-                                                    max='" . $data[$i]['stock'] . "' step='1' type='number' /> -->
                     <!-- <?php
                     echo "<a href='" . BASE . "/Item/update/".$data[$i]['item_id']."'>
                             <button class='adminBtn' type='button' id='edit'>Edit</button>

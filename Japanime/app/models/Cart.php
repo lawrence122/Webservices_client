@@ -20,6 +20,22 @@ class Cart {
 		}
 	}
 
+	public function getSpecificCartItem($token) {
+		$ch = curl_init('http://localhost/cart-shop/api/cart/'.$this->cart_id.'?key=' . $token);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept:application/json', 'Content-Type:application/json'));
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+		$response = curl_exec($ch);
+		curl_close($ch);
+		$response = json_decode($response, true);
+		
+		if ($response['status'] == "200") {
+			return $response['cart'];
+		} else {
+			return false;
+		}
+	}
+
 	public function insert($token) {
 		$ch = curl_init('http://localhost/cart-shop/api/cart?key=' . $token);
 		$payload = json_encode(array('item_id' => $this->item_id, 
@@ -46,6 +62,21 @@ class Cart {
 	public function updateStatus($token) {
 		$ch = curl_init('http://localhost/cart-shop/api/cart/' . $this->cart_id . '?key=' . $token);
 		$payload = json_encode(array('status' => $this->status));
+
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept:application/json', 'Content-Type:application/json'));
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_exec($ch);
+		curl_close($ch);
+	}
+
+	public function addToOrder($token) {
+		$ch = curl_init('http://localhost/cart-shop/api/cart/' . $this->cart_id . '?key=' . $token);
+		$payload = json_encode(array('item_id' => $this->item_id, 
+									'amount' => $this->amount,
+									'client_id' => $this->client_id
+								));
 
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
