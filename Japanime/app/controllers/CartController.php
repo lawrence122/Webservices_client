@@ -41,6 +41,14 @@ class CartController extends \App\core\Controller {
 		header("location:".BASE."/Cart/index");
 	}
 
+	function cancel($cart_id) {
+		$cart = new \App\models\Cart();
+		$cart->cart_id = $cart_id;
+		$cart->status = "Cancelled";
+		$cart->updateStatus($_ENV['TOKEN']);
+		header("location:".BASE."/Cart/index");
+	}
+
 	function delete($cart_id) {
 		$cart = new \App\models\Cart();
 		$cart->cart_id = $cart_id;

@@ -26,11 +26,11 @@
         </div>
         <?php
             for ($i = 0; $i < sizeof($data); $i++) {
-                if ($data[$i]['cart_status'] != "Completed") {
+                if ($data[$i]['cart_status'] != "Completed" && $data[$i]['cart_status'] != "Cancelled") {
                     echo "<div class='item'>
                             <div class='buttons'>
                                 <span class='delete-btn'>
-                                    <a href='" . BASE . "/Cart/delete/".$data[$i]['cart_id']."'>
+                                    <a href='" . BASE . "/Cart/cancel/".$data[$i]['cart_id']."'>
                                         <img src='../img/delete.png'>
                                     </a>
                                 </span>
