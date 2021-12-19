@@ -18,8 +18,8 @@
             <ul id="nav_ul">
                 <li><a href='<?= BASE ?>/Item/getItems'>Items</a>
                 <li><a href='<?= BASE ?>/Item/insert'>Add Item</a>
-                <li><a href='<?= BASE ?>/Cart/index'>Put in an order</a>
-                <li><a href='<?= BASE ?>/Product/viewFigure'>Cart</a>
+                <li><a href='<?= BASE ?>/Cart/insert'>Put in an order</a>
+                <li><a href='<?= BASE ?>/Cart/index'>Orders</a>
             </ul>
         </nav>
     </div>

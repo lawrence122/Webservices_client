@@ -4,27 +4,20 @@ namespace App\controllers;
 class CartController extends \App\core\Controller {
 
 	function index() {
-		$item = new \App\models\Item();
-		$items = $item->getItemsFromClient($_ENV['TOKEN']);
-		$this->view('Cart/order', $items);
+		$cart = new \App\models\Cart();
+		$orders = $cart->getItemFromClientCart($_ENV['TOKEN']);
+		$this->view('Cart/cart', $orders);
 	}
 
-	function insert($item_id, $amount) {
-        // $item = new \App\models\Item();
-		// $item->item_id = $item_id;
-		// $item->amount = $amount;
-        // // $item->insert($_ENV['TOKEN']);
-        // header('location:'.BASE.'/Cart/index');
-
-
-        echo "insert";
+	function insert() {
 		if (isset($_POST['action'])) {
             echo "Post";
-			$item = new \App\models\Item();
-			$item->item_id = $item_id;
-			$item->amount = 0;
-            var_dump($_POST[$item_id . '_amount']);
-			// $item->insert($_ENV['TOKEN']);
+			$cart = new \App\models\Cart();
+			$cart->item_id = $_POST['item_ordered'];
+            $cart->client_id = $_POST['client_id'];
+			$cart->amount = $_POST['amount'];
+            $cart->status = "Preparing";
+			$cart->insert($_ENV['TOKEN']);
 
 			header('location:'.BASE.'/Cart/index');
 		} else {

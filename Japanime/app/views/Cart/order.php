@@ -16,7 +16,7 @@
                 <li><a href='<?= BASE ?>/Item/getItems'>Items</a>
                 <li><a href='<?= BASE ?>/Item/insert'>Add Item</a>
                 <li><a href='<?= BASE ?>/Cart/index'>Put in an order</a>
-                <li><a href='<?= BASE ?>/Product/viewFigure'>Cart</a>
+                <li><a href='<?= BASE ?>/Cart/index'>Orders</a>
             </ul>
         </nav>
     </div>
@@ -24,36 +24,39 @@
         <form action="" method="post" enctype="multipart/form-data">
             <div id="form">
                 <h1>Make Your Order (??)</h1>
-                <!-- <input id="add" type="submit" name="action" value="Submit Your Order"><br><br> -->
                 <label>Client's Name: 
                     <input type="text" name="client_id">
                 </label><br><br>
                 <div class="products">
                     <ul id="products-list">
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                        <option selected>Choose an item</option>
-                        <?php
-                        if(!is_null($data)) {
-                            for($i = 0; $i < sizeof($data); $i++) {
-                                if ($data[$i]['stock'] != 0) {
-                                    echo "<option value=' . $data[$i]['item_id'] . '>" . $data[$i]['item_name'] . "</option>
-                                          <input name='" . $data[$i]['item_id'] . "_amount' data-prefix='x value='0' data-decimals='0' min='0' 
-                                                    max='" . $data[$i]['stock'] . "' step='1' type='number' />";
+                        <label>Choose an item
+                            <select name="item_ordered" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                <option selected>Choose an item</option>
+                                <?php
+                                if(!is_null($data)) {
+                                    for($i = 0; $i < sizeof($data); $i++) {
+                                        if ($data[$i]['stock'] != 0) {
+                                            echo "<option value='" . $data[$i]['item_id'] . "'>" . $data[$i]['item_name'] . "</option>";
+                                        }
+                                    }
                                 }
-                            }
-                        }
-                    ?>
-                    </select>
-                    <?php
+                            ?>
+                            </select>
+                            <input name="amount" data-prefix='x' value='0' data-decimals='0' min='0' max='10' step='1' type='number' />
+                        </label>
+                    <!-- <input name='" . $data[$i]['item_id'] . "_amount' data-prefix='x value='0' data-decimals='0' min='0' 
+                                                    max='" . $data[$i]['stock'] . "' step='1' type='number' /> -->
+                    <!-- <?php
                     echo "<a href='" . BASE . "/Item/update/".$data[$i]['item_id']."'>
                             <button class='adminBtn' type='button' id='edit'>Edit</button>
                         </a>
                         <a href='" . BASE . "/Item/delete/".$data[$i]['item_id']."'>
                             <button class='adminBtn' type='button' id='delete'>Delete</button>
                         </a>";
-                    ?>
+                    ?> -->
                 </ul>
             </div>
+            <input id="add" type="submit" name="action" value="Add to Cart"><br><br>
                 
 
                 <!-- <div class="products">

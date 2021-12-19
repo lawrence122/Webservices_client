@@ -14,12 +14,12 @@ class Cart {
 		echo $response;
 	}
 
-	public function insert($token, $item_id, $amount, $status, $client_id) {
+	public function insert($token) {
 		$ch = curl_init('http://localhost/cart-shop/api/cart?key=' . $token);
-		$payload = json_encode(array('item_id' => $item_id, 
-									'amount' => $amount,
-									'status' => $status,
-									'client_id' => $client_id
+		$payload = json_encode(array('item_id' => $this->item_id, 
+									'amount' => $this->amount,
+									'status' => $this->status,
+									'client_id' => $this->client_id
 								));
 
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
@@ -37,10 +37,10 @@ class Cart {
 		}
 	}
 
-	public function updateStatus($token, $status, $item_id) {
+	public function updateStatus($token) {
 		$ch = curl_init('http://localhost/cart-shop/api/cart/0?key=' . $token);
-		$payload = json_encode(array('item_id' => $item_id, 
-									'status' => $status
+		$payload = json_encode(array('item_id' => $this->item_id, 
+									'status' => $this->status
 								));
 
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
