@@ -2,11 +2,8 @@
 <html>
 <head>
     <title>Add Item</title>
-    <link rel="stylesheet" type="text/css" href="../css
-    /core.css">
-    <link rel="stylesheet" type="text/css" href="../css
-    /addProduct.css">
-    <script src="../js/core.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/core.css">
+    <link rel="stylesheet" type="text/css" href="../css/addProduct.css">
 </head>
 <body>
     
