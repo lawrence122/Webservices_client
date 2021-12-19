@@ -1,49 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Shopping Cart</title>
-    <link rel="stylesheet" type="text/css" href="../css
-    /core.css">
-    <link rel="stylesheet" type="text/css" href="../css
-    /cart.css">
-    <script src="../js/core.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>View Orders</title>
+    <link rel="stylesheet" type="text/css" href="../css/core.css">
+    <link rel="stylesheet" type="text/css" href="../css/cart.css">
 </head>
 <body>
-    <div id="container">
-        <a href='<?= BASE ?>/OrderDetails/index'>
-            <img src="../img/shoppingcartFilled.png" id="shopping-bag">
-        </a>
-        <a href='<?= BASE ?>/User/index'>
-            <img src="../img/account.png" id="account">
-        </a>
-    </div>
     
-    <header>
-        <a href="<?=BASE?>/Default/home">
-            <img src="../img/logo.png" id="logo">
-        </a>
-    </header>
+    <header><h1>Welcome to Cakes! Where we have cakes and other cakes.</h1></header>
 
     <div class="nav_bar">
         <nav>
             <ul id="nav_ul">
-                <li><a href="<?=BASE?>/Default/home">Home</a>
-                <li><a href='<?= BASE ?>/Product/index'>Products</a>
-                <ul class="dropdown">
-                    <li><a href='<?= BASE ?>/Product/viewAnime'>Anime DVD</a>
-                    <li><a href='<?= BASE ?>/Product/viewManga'>Manga</a>
-                    <li><a href='<?= BASE ?>/Product/viewFigure'>Figures</a>
-                </ul>
-                <li class="curr_page"><a href='<?= BASE ?>/OrderDetails/index'>View Shopping Cart</a>
-                <li><a href='<?= BASE ?>/Default/logout'>Log Out</a>
+                <li><a href='<?= BASE ?>/Item/getItems'>Items</a>
+                <li><a href='<?= BASE ?>/Item/insert'>Add Item</a>
+                <li><a href='<?= BASE ?>/Cart/index'>Put in an order</a>
+                <li><a href='<?= BASE ?>/Cart/index'>Orders</a>
             </ul>
         </nav>
     </div>
 
     <div class="shopping-cart">
         <div class="title">
-            Shopping Cart
+            Client Orders
         </div>
         <?php
             $index = 0;
@@ -115,7 +94,7 @@
     </div>
 
     <footer>
-        &copy 2021 Japanime Co., Ltd. - Your number one japanese goods supplier from Canada.
+        &copy 2021 Cakes Co., Ltd. - Your number one cake supplier from Canada.
     </footer>
 </body>
 </html>
