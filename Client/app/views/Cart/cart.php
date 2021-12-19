@@ -36,13 +36,21 @@
                                 </span>
                             </div>
          
-                            <div class='description'>
+                            <div class='client'>
                                 <span id='client'>".$data[$i]['client_id']."</span>
                             </div>
-                            <div class='description'>
-                                Item Name<span>".$data[$i]['items'][0]['item_name']."</span>
-                            </div>
-                            <div class='quantity'>
+                            <div class='description'>";
+
+                            if (sizeof($data[$i]['items']) > 1) {
+                                for ($j = 0; $j < sizeof($data[$i]['items']); $j++) {
+                                    echo "<span>".$data[$i]['items'][$j]['item_name']." x".$data[$i]['items'][$j]['amount']."</span>";
+                                }
+                            } else {
+                                echo "<span>".$data[$i]['items'][0]['item_name']." x".$data[$i]['items'][0]['amount']."</span>";   
+                            }
+                            
+                            echo "</div>
+                                <div class='quantity'>
                                 <a href='" . BASE . "/Cart/update/".$data[$i]['cart_id']."'>
                                     <button class='adminBtn' type='button' id='complete'>Completed</button>
                                 </a>
@@ -52,6 +60,7 @@
                             </div>
                         <div class='total-price'>".$data[$i]['items'][0]['amount']."$</div>
                         </div>";
+
                 }
             }
         ?>
