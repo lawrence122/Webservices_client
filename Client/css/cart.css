@@ -85,6 +85,7 @@
   box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
   transition: 0.2s all; 
   border-radius: 25px;
+  margin-bottom: 10px;
 }
 
 #edit {
