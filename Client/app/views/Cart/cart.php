@@ -25,6 +25,7 @@
             Client Orders
         </div>
         <?php
+        if (!is_null($data)) {
             for ($i = 0; $i < sizeof($data); $i++) {
                 if ($data[$i]['cart_status'] != "Completed" && $data[$i]['cart_status'] != "Cancelled") {
                     echo "<div class='item'>
@@ -40,16 +41,17 @@
                                 <span id='client'>".$data[$i]['client_id']."</span>
                             </div>
                             <div class='description'>";
-                            $cost = 0;
-
-                            if (sizeof($data[$i]['items']) > 1) {
-                                for ($j = 0; $j < sizeof($data[$i]['items']); $j++) {
-                                    echo "<span>".$data[$i]['items'][$j]['item_name']." x".$data[$i]['items'][$j]['amount']."</span>";
-                                    $cost += ($data[$i]['items'][$j]['amount'] * $data[$i]['items'][$j]['price']);
+                            if (!is_null($data[$i]['items'])) {
+                                $cost = 0;
+                                if (sizeof($data[$i]['items']) > 1) {
+                                    for ($j = 0; $j < sizeof($data[$i]['items']); $j++) {
+                                        echo "<span>".$data[$i]['items'][$j]['item_name']." x".$data[$i]['items'][$j]['amount']."</span>";
+                                        $cost += ($data[$i]['items'][$j]['amount'] * $data[$i]['items'][$j]['price']);
+                                    }
+                                } else {
+                                    echo "<span>".$data[$i]['items'][0]['item_name']." x".$data[$i]['items'][0]['amount']."</span>";
+                                    $cost += ($data[$i]['items'][0]['amount'] * $data[$i]['items'][0]['price']);
                                 }
-                            } else {
-                                echo "<span>".$data[$i]['items'][0]['item_name']." x".$data[$i]['items'][0]['amount']."</span>";
-                                $cost += ($data[$i]['items'][0]['amount'] * $data[$i]['items'][0]['price']);
                             }
                             
                             echo "</div>
@@ -65,6 +67,7 @@
                         </div>";
                 }
             }
+        }
         ?>
     </div>
 
