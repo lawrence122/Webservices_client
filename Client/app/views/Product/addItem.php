@@ -33,8 +33,10 @@
                     <input type="file" name="myImage">
                 </label><br><br>
 
-                <label>Description: </label><br>
+                <label>Description: 
                     <textarea name="description"></textarea>
+                </label><br>
+                    
                 <br><br>
 
                 <label>Price: 

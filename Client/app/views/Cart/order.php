@@ -22,7 +22,7 @@
 
     <div id="wrapper">
         <form action="" method="post" enctype="multipart/form-data">
-            <div id="form">
+            <div id="form2">
                 <h1>Place Your Order</h1>
                 <label>Client Name: 
                     <input type="text" name="client_id">
@@ -41,8 +41,8 @@
                                     }
                                 }
                             ?>
-                            </select>
                             <input name='amount' data-prefix='x' value='0' data-decimals='0' min='0' max='10' step='1' type='number' />
+                            </select>
                         </label>
                     </ul>
                     <br><br>

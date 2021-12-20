@@ -17,6 +17,13 @@ form {
 #form {
 	text-align: left;
 	display: inline-block;
+	margin-left: 20px;
+    margin-right: auto;
+}
+
+#form2 {
+	text-align: center;
+	display: inline-block;
 	margin-left: auto;
     margin-right: auto;
 }
