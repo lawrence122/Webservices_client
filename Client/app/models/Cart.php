@@ -13,7 +13,7 @@ class Cart {
 		curl_close($ch);
 		$response = json_decode($response, true);
 		
-		if ($response['status'] == "200") {
+		if (!is_null($response) && $response['status'] == "200") {
 			return $response['carts'];
 		} else {
 			return false;
