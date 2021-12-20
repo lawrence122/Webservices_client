@@ -18,7 +18,7 @@
     </div>
     <div id="wrapper">
         <form action="" method="post" enctype="multipart/form-data">
-            <div id="form">
+            <div id="form2">
                 <h1><?= $data['cart']['client_id']?>'s Order</h1>
                 <div class="products">
                     <ul id="products-list">

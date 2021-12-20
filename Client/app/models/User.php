@@ -2,9 +2,6 @@
 namespace App\models;
 
 class User {
-	public $password_hash;
-	public $email;
-	public $token = "10938.Zjg5YmMyZmU3YzZmYzUyNGJjYTJmMmVhOGRjNjE2NjY";
 
 	public function insert() {
 		$ch = curl_init('http://localhost/cart-shop/api/user');

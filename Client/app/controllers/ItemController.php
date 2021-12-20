@@ -70,7 +70,7 @@ class ItemController extends \App\core\Controller {
 		$item->item_id = $item_id;
 
 		$item->deleteItem($_ENV['TOKEN']);
-		header("location:".BASE."/Item/index");
+		// header("location:".BASE."/Item/index");
 	}
 }
 ?>
