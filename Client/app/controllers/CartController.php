@@ -16,8 +16,11 @@ class CartController extends \App\core\Controller {
             $cart->client_id = $_POST['client_id'];
 			$cart->amount = $_POST['amount'];
             $cart->status = "Preparing";
-			$cart->insert($_ENV['TOKEN']);
-			header('location:'.BASE.'/Cart/index');
+			if ($cart->insert($_ENV['TOKEN'])) {
+				header('location:'.BASE.'/Cart/index');
+			} else {
+				header('location:'.BASE.'/Cart/insert?error=There isn\'t enough of that product in stock to complete this order!');
+			}
 		} else {
 			$item = new \App\models\Item();
 		    $items = $item->getItemsFromClient($_ENV['TOKEN']);
@@ -32,8 +35,11 @@ class CartController extends \App\core\Controller {
 			$cart->item_id = $_POST['item_ordered'];
 			$cart->amount = $_POST['amount'];
 			$cart->client_id = $_POST['first_name'];
-			$cart->addToOrder($_ENV['TOKEN']);
-			header('location:'.BASE.'/Cart/index');
+			if ($cart->addToOrder($_ENV['TOKEN'])) {
+				header('location:'.BASE.'/Cart/index');
+			} else {
+				header('location:'.BASE.'/Cart/edit/' . $cart_id . '?error=There isn\'t enough of that product in stock to complete this order!');
+			}
 		} else {
 			$cart = new \App\models\Cart();
 			$cart->cart_id = $cart_id;

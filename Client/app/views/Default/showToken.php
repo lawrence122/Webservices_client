@@ -3,6 +3,7 @@
 <head>
 	<title>Show token</title>
 	<link rel="stylesheet" type="text/css" href="../css/core.css">
+    <link rel="stylesheet" type="text/css" href="../css/addProduct.css">
 	<script src="../js/registration.js"></script>
 </head>
 <body>
@@ -19,8 +20,15 @@
     </div>
 
 	<div id="wrapper">
-		<h1>Here's your Token: <?= $data?></h1>
-		<p>Put it between the <span class="star">"</span> after "TOKEN="in the .env file.</p>
+        <div class="products">
+            <ul id="products-list">
+                <h1>Here's your API Key: <br><br>
+                    <?= $data?></h1>
+		        <p>Put it between the <span class="star">""</span> in the .env file.</p>
+                <p>It should look like "TOKEN="[YOUR_API_KEY]"</p>
+            </ul>
+            <br><br>
+        </div>
 	</div>
 </body>
 </html>

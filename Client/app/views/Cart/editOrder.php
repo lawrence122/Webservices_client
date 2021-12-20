@@ -35,7 +35,7 @@
                                 }
                             ?>
                             </select>
-                            <input name='amount' data-prefix='x' value='0' data-decimals='0' min='0' max='10' step='1' type='number' />
+                            <input name='amount' data-prefix='x' value='0' data-decimals='0' min='0' max='100' step='1' type='number' />
                     </ul>
                 </div>
             </div>

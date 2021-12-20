@@ -82,8 +82,15 @@ class Cart {
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept:application/json', 'Content-Type:application/json'));
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		$response = json_decode($response, true);
+
+		if ($response['status'] == "200") {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public function updateAmount($token, $amount, $item_id) {
