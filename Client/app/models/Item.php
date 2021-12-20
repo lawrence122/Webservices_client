@@ -15,17 +15,8 @@ class Item {
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept:application/json', 'Content-Type:application/json'));
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-		$response = curl_exec($ch);
+		curl_exec($ch);
 		curl_close($ch);
-		$response = json_decode($response, true);
-		echo $response;
-
-		// if (!is_null($response) && $response['status'] == "201") {
-		// 	return true;
-		// } else {
-		// 	return false;
-		// }
 	}
 
 	public function getItemsFromClient($token) {
@@ -67,34 +58,17 @@ class Item {
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept:application/json', 'Content-Type:application/json'));
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-		$response = curl_exec($ch);
+		curl_exec($ch);
 		curl_close($ch);
-		$response = json_decode($response, true);
-
-		if ($response['status'] == '200') {
-			echo $response['message'];
-		} else {
-			return false;
-		}
 	}
 
 	public function deleteItem($token) {
 		$ch = curl_init('http://localhost/cart-shop/api/item/' . $this->item_id . '?key=' . $token);
-
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept:application/json', 'Content-Type:application/json'));
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-		$response = curl_exec($ch);
+		curl_exec($ch);
 		curl_close($ch);
-		$response = json_decode($response, true);
-
-		if ($response['status'] == '500') {
-			return true;
-		} else {
-			return false;
-		}
 	}
 }
 

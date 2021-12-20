@@ -21,12 +21,12 @@ class UserController extends \App\core\Controller {
 
 	function changePassword($user_id) {
 		$user = new \App\models\User();
-		$user = $user->find($_SESSION['user_id']);
+		// $user = $user->find($_SESSION['user_id']);
 
 		if (isset($_POST['action'])) {
 			if ($_POST['password'] == $_POST['password_confirm']) {
 	            $user->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-	            $user->updatePassword();
+	            // $user->updatePassword();
 	            header('location:'.BASE.'/Default/home');
 			}
         } else {

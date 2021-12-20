@@ -35,14 +35,6 @@ class ItemController extends \App\core\Controller {
                     }
                 }
             }
-			// $item = new \App\models\Item();
-			// $item->item_name = $_POST['product_name'];
-			// $item->description = $_POST['description'];
-			// $item->price = $_POST['price'];
-			// $item->stock = $_POST['quantity'];
-			// $item->insert($_ENV['TOKEN']);
-
-			// header('location:'.BASE.'/Item/index');
 		} else {
 			$this->view('Product/addItem');
 		}
