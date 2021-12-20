@@ -28,6 +28,10 @@
                     <input type="text" name="product_name">
                 </label><br><br>
 
+                <label>Select an image file to upload:
+                    <input type="file" name="myImage">
+                </label><br><br>
+
                 <label>Description: </label><br>
                     <textarea name="description"></textarea>
                 <br><br>

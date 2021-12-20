@@ -28,6 +28,9 @@
                 for($i = 0; $i < sizeof($data); $i++) {
                     echo "<li>
                             <div class='product'>
+                                <div class='image'>
+                                    <img src='" . $data[$i]['picture'] . "' style='width: 75%;'>
+                                </div>
                                 <h1 class='title'>".$data[$i]['item_name']."</h1>
                                 <p class='price'>".$data[$i]['price']."$</p>
                                 <p>".$data[$i]['description']."</p>

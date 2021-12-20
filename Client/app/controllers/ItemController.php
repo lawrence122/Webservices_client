@@ -11,14 +11,38 @@ class ItemController extends \App\core\Controller {
 
 	function insert() {
 		if (isset($_POST['action'])) {
-			$item = new \App\models\Item();
-			$item->item_name = $_POST['product_name'];
-			$item->description = $_POST['description'];
-			$item->price = $_POST['price'];
-			$item->stock = $_POST['quantity'];
-			$item->insert($_ENV['TOKEN']);
+			if (isset($_FILES['myImage'])) {
+                $check = getimagesize($_FILES['myImage']['tmp_name']);
+                $allowedTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/jpg'];
 
-			header('location:'.BASE.'/Item/index');
+                if ($check !== false && in_array($check['mime'], $allowedTypes)) {
+                    $extension = ['image/gif'=>'gif', 'image/jpeg'=>'jpeg', 'image/png'=>'png', 'image/jpg'=>'jpg'];
+                    $extension = $extension[$check['mime']];
+                    $target_folder = 'img/';
+                    $targetFile = uniqid().".$extension";
+                    if (move_uploaded_file($_FILES['myImage']['tmp_name'], $target_folder.$targetFile)) {
+                        $item = new \App\models\Item();
+                        $item->item_name = $_POST['product_name'];
+                        $item->description = $_POST['description'];
+                        $item->price = $_POST['price'];
+                        $item->stock = $_POST['quantity'];
+                        $item->picture = getcwd() . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . $targetFile;
+                        $item->insert($_ENV['TOKEN']);
+
+                        header('location:'.BASE.'/Item/index');
+                    } else {
+                        echo 'error';
+                    }
+                }
+            }
+			// $item = new \App\models\Item();
+			// $item->item_name = $_POST['product_name'];
+			// $item->description = $_POST['description'];
+			// $item->price = $_POST['price'];
+			// $item->stock = $_POST['quantity'];
+			// $item->insert($_ENV['TOKEN']);
+
+			// header('location:'.BASE.'/Item/index');
 		} else {
 			$this->view('Product/addItem');
 		}
