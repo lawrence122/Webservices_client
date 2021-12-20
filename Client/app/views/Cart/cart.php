@@ -26,7 +26,7 @@
             Client Orders
         </div>
         <?php
-        if (!is_null($data)) {
+        if (!is_null($data) && $data) {
             for ($i = 0; $i < sizeof($data); $i++) {
                 if ($data[$i]['cart_status'] != "Completed" && $data[$i]['cart_status'] != "Cancelled") {
                     echo "<div class='item'>

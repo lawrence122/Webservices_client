@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Show token</title>
-	<link rel="stylesheet" type="text/css" href="../css/register.css">
+	<link rel="stylesheet" type="text/css" href="../css/core.css">
 	<script src="../js/registration.js"></script>
 </head>
 <body>

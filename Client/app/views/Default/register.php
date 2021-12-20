@@ -2,15 +2,16 @@
 <html>
 <head>
 	<title>Registration Page</title>
-	<!-- <link rel="stylesheet" type="text/css" href="../css/register.css">
-	<script src="../js/registration.js"></script> -->
+	<link rel="stylesheet" type="text/css" href="../css/core.css">
+	<link rel="stylesheet" type="text/css" href="../css/addProduct.css">
+	<link rel="stylesheet" type="text/css" href="../css/register.css">
 </head>
 <body>
-	<!-- <?php
+	<?php
 		if(isset($_GET['error'])) {
 			echo "<script type='text/javascript'> alert('$_GET[error]'); </script>";
 		}
-	?> -->
+	?>
     <div class="nav_bar">
         <nav>
             <ul id="nav_ul">
@@ -33,18 +34,8 @@
 				<input type="text" id="email" name="email" required><br><br>
 
 				<label><span class="star">*</span>Select a password: </label>
+				<input type="password" id="pswd" name="password" required><span class="tooltiptext">
 
-				<div class="tooltip">
-					<input type="password" id="pswd" name="password" required><span class="tooltiptext">
-						<ul id="pswdRequirements">
-							<li>8 to 16 characters
-							<li>At least 1 uppercase letter
-							<li>At least 1 lowercase letter
-							<li>At least 1 number
-							<li>No special characters
-						</ul>
-					</span>
-				</div>
 				<br><br>
 
 				<label><span class="star">*</span>Confirm password: </label>
@@ -53,7 +44,6 @@
 			<br>
 
             <input type="submit" id="register" name="action" value="Register">
-			<!-- <input type="submit" id="register" name="action" value="Register" onclick="validateForm(event);"> -->
 		</form>
 	</div>
 </body>
