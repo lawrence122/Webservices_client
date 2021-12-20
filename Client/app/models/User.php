@@ -2,13 +2,10 @@
 namespace App\models;
 
 class User {
-	public $password_hash;
-	public $email;
-	public $token = "10938.Zjg5YmMyZmU3YzZmYzUyNGJjYTJmMmVhOGRjNjE2NjY";
 
 	public function insert() {
 		$ch = curl_init('http://localhost/cart-shop/api/user');
-	    $payload = json_encode(array('email' => "google@gold.com", 'password' => "hello"));
+	    $payload = json_encode(array('email' => $this->email, 'password' => $this->password));
 
 	    curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
 	    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept:application/json', 'Content-Type:application/json'));
@@ -18,8 +15,8 @@ class User {
 	    curl_close($ch);
 	    $response = json_decode($response, true);
 
-	    if ($response['status'] == '200') {
-	        echo $response['token'];
+	    if (!is_null($response) && $response['status'] == '200') {
+	        return $response['token'];
 	    } else {
 	    	return false;
 	    }
@@ -78,21 +75,21 @@ class User {
 	}
 }
 
-$ch = curl_init('http://localhost/cart-shop/api/user');
-	    $payload = json_encode(array('email' => "google@gold.com", 'password' => "hello"));
+// $ch = curl_init('http://localhost/cart-shop/api/user');
+// 	    $payload = json_encode(array('email' => "google@gold.com", 'password' => "hello"));
 
-	    curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-	    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept:application/json', 'Content-Type:application/json'));
-	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// 	    curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+// 	    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept:application/json', 'Content-Type:application/json'));
+// 	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-	    $response = curl_exec($ch);
-	    curl_close($ch);
-	    $response = json_decode($response, true);
+// 	    $response = curl_exec($ch);
+// 	    curl_close($ch);
+// 	    $response = json_decode($response, true);
 
-	    if ($response['status'] == '200') {
-	        echo $response['token'];
-	    } else {
-	    	return false;
-	    }
+// 	    if ($response['status'] == '200') {
+// 	        echo $response['token'];
+// 	    } else {
+// 	    	return false;
+// 	    }
 
 ?>
