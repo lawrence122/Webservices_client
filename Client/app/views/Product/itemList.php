@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <header><h1>Welcome to Cakes! Where we have cakes and other cakes.</h1></header>
+    <header><h1>Welcome to Sugar High! Where we have cakes and other cakes.</h1></header>
 
     <div class="nav_bar">
         <nav>
